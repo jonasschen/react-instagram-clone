@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 203 89% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 86%;
+    --input: 0 0% 86%;
+    --ring: 203 89% 53%;
+
+    --radius: 0.5rem;
+
+    /* Instagram specific colors */
+    --instagram-blue: 203 89% 53%;
+    --instagram-pink: 340 82% 52%;
+    --instagram-purple: 280 87% 44%;
+    --instagram-orange: 28 100% 54%;
+    --instagram-yellow: 42 100% 60%;
+    --instagram-red: 0 100% 60%;
+    --instagram-gradient-start: 340 82% 52%;
+    --instagram-gradient-mid: 280 87% 44%;
+    --instagram-gradient-end: 28 100% 54%;
+
+    /* Story ring gradient */
+    --story-gradient: linear-gradient(45deg, 
+      hsl(42 100% 60%), 
+      hsl(28 100% 54%), 
+      hsl(340 82% 52%), 
+      hsl(280 87% 44%)
+    );
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 203 89% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 203 89% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+@layer utilities {
+  .story-ring {
+    background: var(--story-gradient);
+    padding: 2px;
+    border-radius: 50%;
+  }
+
+  .story-ring-inner {
+    background: hsl(var(--background));
+    padding: 2px;
+    border-radius: 50%;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .instagram-button {
+    @apply bg-primary text-primary-foreground font-semibold py-2 px-4 rounded-lg;
+  }
+
+  .instagram-input {
+    @apply bg-secondary border border-border rounded-sm px-3 py-2 text-sm;
+  }
+}
